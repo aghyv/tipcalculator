@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/logo.svg" alt="splitter_logo" />
+    </div>
+    <div class="wrapper">
+      <div class="calculator">
+        <div class="mini-container">
+          <h6>Bill</h6>
+          <input
+            onchange="getBillAmount()"
+            class="inputfield1"
+            type="number"
+            pattern="^[0-9]*$"
+            name=""
+            value=""
+            placeholder="0"
+          />
+        </div>
+        <div class="mini-container">
+          <h6>Select Tip %</h6>
+          <div class="percent">
+            <button class="percent-btn" type="button" name="5">5%</button>
+            <button class="percent-btn" type="button" name="10">10%</button>
+            <button class="percent-btn" type="button" name="15">15%</button>
+            <button class="percent-btn" type="button" name="25">25%</button>
+            <button class="percent-btn" type="button" name="50">50%</button>
+            <input
+              onchange="getCustomTip()"
+              id="custom-btn"
+              type="text"
+              pattern="^[0-9]*$"
+              name=""
+              value=""
+              placeholder="Custom"
+            />
+          </div>
+        </div>
+
+        <div class="mini-container">
+          <h6>Number of People</h6>
+          <p id="msg" class="warn-msg">Can not be 0</p>
+          <input
+            onchange="getPeople()"
+            class="inputfield2"
+            type="number"
+            pattern="^[0-9]*$"
+            name=""
+            value=""
+            placeholder="0"
+          />
+        </div>
+      </div>
+      <div class="result-container">
+        <div class="res">
+          <div class="up grid-item">
+            <h6>Tip Amount</h6>
+            <p>/ person</p>
+          </div>
+          <div class="up grid-tem">
+            <h2 class="right">$ <span id="tottip">0.00</span></h2>
+          </div>
+
+          <div class="grid-item">
+            <h6>Total</h6>
+            <p>/ person</p>
+          </div>
+          <div class="grid-item">
+            <h2 class="right">$ <span id="totalXP">0.00</span></h2>
+          </div>
+        </div>
+
+        <button
+          onclick="reset()"
+          class="reset-btn disable"
+          id="rst"
+          type="button"
+          name="button"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Agnes Varga</a>.
+    </div>
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
